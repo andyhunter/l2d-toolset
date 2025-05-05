@@ -1,0 +1,1 @@
+-- This file defines the first level of the game, including layout and properties.
