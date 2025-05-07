@@ -5,43 +5,51 @@ This project is a template for developing games using the Love2D engine. It inte
 
 ## Project Structure
 ```
-love2d-project
+l2d-toolset
 ├── main.lua          # Main entry point of the application
 ├── conf.lua          # Configuration settings for the Love2D application
 ├── src               # Source files for game logic and entities
+│   ├── esc           # Entity-Component-System framework
+│   │   ├── world.lua # World management
+│   │   ├── components/  # Component definitions
+│   │   ├── entities/    # Entity definitions
+│   │   └── systems/     # System implementations
 │   ├── states        # Game states management
-│   │   ├── game.lua  # Game state logic
-│   │   ├── menu.lua  # Main menu state
-│   │   └── state.lua # Base class for states
-│   ├── entities      # Game entities
-│   │   └── player.lua# Player entity definition
-│   ├── systems       # Game systems
-│   │   ├── physics.lua    # Physics system for collision detection
-│   │   └── animation.lua   # Animation management
+│   │   ├── boot.lua     # Boot/loading state
+│   │   ├── gameover.lua # Game over state
+│   │   ├── hub.lua      # Hub/central area state
+│   │   ├── mainmenu.lua # Main menu state
+│   │   ├── pausemenu.lua# Pause menu state
+│   │   ├── run.lua      # Gameplay run state
+│   │   └── settings.lua # Settings state
 │   └── utils         # Utility functions
-│       └── helpers.lua     # Helper functions
-├── lib               # External libraries
-│   ├── hump          # HUMP libraries for game development
-│   │   ├── camera.lua    # Camera management
-│   │   ├── gamestate.lua  # Game state management
-│   │   ├── timer.lua      # Timer utility
-│   │   └── vector.lua     # Vector math operations
-│   ├── sti           # Tiled map integration
-│   │   └── sti.lua   # Tiled map loading and rendering
+│       ├── audio.lua    # Audio management
+│       ├── config.lua   # Configuration utilities
+│       ├── helpers.lua  # Helper functions
+│       ├── resources.lua# Resource management
+│       └── input/       # Input handling
+├── libs              # External libraries
 │   ├── anim8         # Animation library
-│   │   └── anim8.lua # Sprite animation handling
+│   ├── baton         # Input handling library
+│   ├── batteries     # Various utility modules
 │   ├── bump          # Collision detection library
-│   │   └── bump.lua  # Bump collision detection
-│   └── flux          # Tweening library
-│       └── flux.lua  # Smooth animations and transitions
+│   ├── concord       # Entity-Component-System library
+│   ├── hump          # HUMP libraries (camera, gamestate, etc.)
+│   ├── lume          # Utility library
+│   ├── smiti18n      # Internationalization library
+│   ├── sti           # Tiled map integration
+│   └── suit          # Immediate mode GUI library
 ├── assets            # Game assets
 │   ├── images        # Image assets
-│   │   └── sprites.png # Sprite sheet
 │   ├── audio         # Audio assets
-│   │   ├── music     # Music files
-│   │   └── sfx       # Sound effect files
+│   │   ├── music     # Music files (mp3)
+│   │   └── sfx       # Sound effect files (wav)
+│   ├── fonts         # Font files
 │   └── maps          # Game maps
-│       └── level1.lua # First level definition
+│       └── level1.lua# First level definition
+├── locales           # Localization files
+│   ├── en.lua        # English localization
+│   └── zh-CN.lua     # Chinese localization
 └── README.md         # Project documentation
 ```
 
